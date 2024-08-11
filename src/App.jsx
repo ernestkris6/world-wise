@@ -25,12 +25,12 @@ function reducer(state, action){
 export default function App() {
 
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [{count}, dispatch] = useReducer(reducer, initialState)
 
 
   return (
     <div>
-      {state.count}
+      {count}
       <br />
       <button onClick={()=> dispatch({type: "inc"})}>Add 1</button>
       <br />
