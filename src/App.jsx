@@ -16,6 +16,16 @@ function reducer(state, action){
         ...state, 
         count: state.count -1,
       }
+    case "mul":
+      return{
+        ...state,
+        count: state.count * 5,
+      }
+    case "div":
+      return{
+        ...state,
+        count: state.count / 2 % 4,
+      }
       default: return state
   }
 
@@ -32,9 +42,13 @@ export default function App() {
     <div>
       {count}
       <br />
-      <button onClick={()=> dispatch({type: "inc" || "mul"})}>Add 1</button>
+      <button onClick={()=> dispatch({type: "inc"})}>Add 1</button>
       <br />
       <button onClick={()=> dispatch({type: "dec"})}>Subtract 1</button>
+      <br />
+      <button onClick={()=> dispatch({type: "dec"})}>Subtract 1</button>
+      <br />
+      <button onClick={()=> dispatch({type: "div"})}>Divide </button>
     </div>
   )
 }
