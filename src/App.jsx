@@ -42,13 +42,13 @@ export default function App() {
     <div>
       {count}
       <br />
-      <button onClick={()=> dispatch({type: "inc"})}>Add 1</button>
+      <button onClick={()=> dispatch({type: "inc"})}>Add </button>
       <br />
-      <button onClick={()=> dispatch({type: "dec"})}>Subtract 1</button>
+      <button onClick={()=> dispatch({type: "dec"})}>Subtract</button>
       <br />
-      <button onClick={()=> dispatch({type: "dec"})}>Subtract 1</button>
+      <button onClick={()=> dispatch({type: "mul"})}>Multiply</button>
       <br />
-      <button onClick={()=> dispatch({type: "div"})}>Divide </button>
+      <button onClick={()=> dispatch({type: "div"})}>Divide</button>
     </div>
   )
 }
