@@ -1,8 +1,8 @@
-// import React from 'react';
+import React from 'react';
 
 export default function App() {
 
-  // const x = 3;
+  const x = 3;
    
   return (
     <div>
