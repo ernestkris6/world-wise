@@ -1,14 +1,11 @@
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
+import Home from "./Components/Pages/Home"
 
 export default function App() {
 
     
   return (
     <div>
-      <Header />
-     <h1>WorldWise</h1>
-     <Footer />
+     <Home />
     </div>
   )
 }
