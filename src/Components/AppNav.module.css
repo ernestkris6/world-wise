@@ -1,11 +1,11 @@
-nav{
+/* nav{
     background-color: rebeccapurple;
-}
+} */
 
-:global(.test){
+/* :global(.test){
     background-color: red;
 }
 
 .nav :global(.active){
     background-color: green;
-}
+} */
