@@ -4,18 +4,19 @@ import Pricing from "./Pages/Pricing"
 import Product from "./Pages/Product"
 import PageNotFound from "./Pages/PageNotFound"
 
+
 export default function App() {
 
     
   return (
    
     <div>
-       <h4>Hello Routes!</h4>
+
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="product" element={<Product />}/>
-        <Route path="pricing" element={<Pricing />}/>
+        <Route path="/product" element={<Product />}/>
+        <Route path="/pricing" element={<Pricing />}/>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
