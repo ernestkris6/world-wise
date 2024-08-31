@@ -2,6 +2,12 @@
 
 export default function SideBar() {
   return (
-    <div>SideBar</div>
+    <div>
+      SideBar
+      <footer>
+        &copy; 2024
+      </footer>
+    </div>
+    
   )
 }
