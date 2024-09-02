@@ -8,4 +8,7 @@ function Logo() {
   </Link>;
 }
 
+// 08138942926
+// 09070783690
+
 export default Logo;
