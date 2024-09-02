@@ -15,7 +15,7 @@ export default function App() {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const BASE_URL = "http://localhost:port8000"
+  const BASE_URL = "http://localhost:8000"
 
 
   useEffect(function(){
