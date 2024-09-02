@@ -4,13 +4,12 @@
   display: flex;
   gap: 1.6rem;
   align-items: center;
-
   background-color: var(--color-dark--2);
   border-radius: 7px;
   padding: 1rem 2rem;
   border-left: 5px solid var(--color-brand--2);
   cursor: pointer;
-
+  /* justify-content: space-between; */
   color: inherit;
   text-decoration: none;
 }
@@ -28,11 +27,13 @@
 .name {
   font-size: 1.7rem;
   font-weight: 600;
-  margin-right: auto;
+  margin-right: 150px;
 }
 
 .date {
   font-size: 1.5rem;
+  gap: 1.6rem;
+  margin-left: auto;
   
 }
 
@@ -46,6 +47,7 @@
   font-size: 1.6rem;
   font-weight: 400;
   cursor: pointer;
+  
   transition: all 0.2s;
 }
 

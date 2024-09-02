@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
 import PageNav from "../Components/PageNav";
 import styles from "./Homepage.module.css";
 
@@ -19,6 +20,7 @@ export default function Homepage() {
         </h2>
         <Link to="/app" className="cta">START TRACKING NOW</Link>
       </section>
+      <Footer />
     </main>
   );
 }
