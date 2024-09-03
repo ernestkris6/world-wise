@@ -7,6 +7,7 @@ import AppLayout from "./Components/AppLayout"
 import Login from "./Pages/Login"
 import CityList from "./Components/CityList"
 import { useEffect, useState } from "react"
+import CountryList from "./Components/CountryList"
 
 
 
@@ -53,7 +54,7 @@ export default function App() {
         <Route path="/app" element={<AppLayout/>} >
           <Route index element={<CityList cities={cities} isLoading={isLoading} />} />
           <Route path="cities" element={<CityList cities={cities} isLoading={isLoading} />} />
-          <Route path="countries" element={<p>List of Countries</p>} />
+          <Route path="countries" element={<CountryList />} />
           <Route path="form" element={<p>List of form</p>} />
         </Route>
         <Route path="/login" element={<Login />} />
