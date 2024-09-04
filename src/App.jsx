@@ -9,6 +9,7 @@ import Login from "./Pages/Login"
 import CityList from "./Components/CityList"
 import CountryList from "./Components/CountryList"
 import City from "./Components/City"
+import Form from "./Components/Form"
 
 
 
@@ -63,16 +64,16 @@ export default function App() {
           path="cities" 
           element={<CityList cities={cities} 
           isLoading={isLoading} />} />
-          
+
           <Route path="cities/:id" element={<City />} />
-          
           <Route 
           path="countries" 
           element={<CountryList cities={cities} 
           isLoading={isLoading}/>} />
-          <Route path="form" element={<p>List of form</p>} />
+          <Route path="form" element={<Form />} />
         </Route>
-        <Route path="/login" element={<Login />} />
+       
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
