@@ -56,7 +56,7 @@ function Form() {
         {/* <button>Add&rarr;</button> */}
         <Button type="primary">ADD</Button>
         {/* <button>&larr; Back</button> */}
-        <Button type="back">&larr; BACK</Button>
+        <Button type="back" onClick={()=> navigate("*")}>&larr; BACK</Button>
       </div>
     </form>
   );
