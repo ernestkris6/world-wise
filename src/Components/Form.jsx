@@ -20,7 +20,7 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <form className={styles.form}>
@@ -54,9 +54,9 @@ function Form() {
 
       <div className={styles.buttons}>
         {/* <button>Add&rarr;</button> */}
-        <Button>ADD</Button>
+        <Button type="primary">ADD</Button>
         {/* <button>&larr; Back</button> */}
-        <Button onClick={()=> navigate("*")}>BACK</Button>
+        <Button type="back">&larr; BACK</Button>
       </div>
     </form>
   );
