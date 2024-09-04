@@ -11,8 +11,8 @@ const formatDate = (date) =>
     weekday: "long",
   }).format(new Date(date));
 
-  const {cityName, emoji, date, id} = city;
-  // console.log(city);
+  const {cityName, emoji, date, id, position} = city;
+  console.log(position);
   
   return (
     <li> 
