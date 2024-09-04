@@ -8,8 +8,8 @@
 //     weekday: "long",
 //   }).format(new Date(date));
 
-// function City() {
-//   // TEMP DATA
+function City() {
+  // TEMP DATA
 //   const currentCity = {
 //     cityName: "Lisbon",
 //     emoji: "🇵🇹",
@@ -18,6 +18,8 @@
 //   };
 
 //   const { cityName, emoji, date, notes } = currentCity;
+
+  return <p>Cities</p>
 
 //   return (
 //     <div className={styles.city}>
@@ -56,6 +58,6 @@
 //       </div>
 //     </div>
 //   );
-// }
+}
 
-// export default City;
+export default City;
