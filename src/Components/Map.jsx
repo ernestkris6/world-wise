@@ -12,8 +12,8 @@ export default function Map() {
   return (
     <div className={styles.mapContainer}>
         <h1>Map</h1>
-        <h3>{lat}</h3>
-        <h3>{lng}</h3>
+        <h3>Latitude: {lat}</h3>
+        <h3>Longitude: {lng}</h3>
     </div>
   )
 }
