@@ -10,7 +10,8 @@ export default function CountryList({cities, isLoading}) {
   if(!cities.length) 
     return (
   <Message message="Add 
-  your first city by clicking on a city on the map"/>
+  your first city by clicking on a city on the map"
+  />
 );
 
   const countries = cities.reduce((arr, city)=> 
@@ -22,8 +23,8 @@ export default function CountryList({cities, isLoading}) {
 
   return (
     <ul className={styles.countryList}>
-      {countries.map((country, i)=> (
-        <CountryItem country={country} key={i} />
+      {countries.map((country)=> (
+        <CountryItem country={country} key={country.country} />
       ))}
     </ul>
   )
