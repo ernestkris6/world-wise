@@ -8,4 +8,4 @@ function CityProvider(){
 
 }
 
-export default { CityProvider }
+export default CityProvider;
