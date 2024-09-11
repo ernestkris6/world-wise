@@ -1,12 +1,11 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 const cityContext = createContext() 
 
 
 function CityContext(){
 
-    useState()
-
+    
 
     function useCity(){
         const context = cityContext(CityContext)
