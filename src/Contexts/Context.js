@@ -1,18 +1,14 @@
 import { createContext } from 'react';
 
-const cityContext = createContext() 
+const CityContext = createContext() 
 
 
-function CityContext(){
+function CitiesContext(){
 
     
 
-    function useCity(){
-        const context = cityContext(CityContext)
-        if(context === undefined) throw new Error("City Context has been called in a wrong component")
-            else return context;
-    }
+ 
 }
 
 
-export default {CityContext, useCity};
+export default { CitiesContext };
