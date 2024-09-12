@@ -7,6 +7,8 @@ const CitiesContext = createContext()
 
 function CitiesProvider({ children }){
 
+    
+
     const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -15,7 +17,7 @@ function CitiesProvider({ children }){
             try{
                 setIsLoading(true);
                 const res = await fetch(`${BASE_URL}/cities`)
-                const data = res.json();
+                const data = await res.json();
                 setCities(data)
             }
             catch{
