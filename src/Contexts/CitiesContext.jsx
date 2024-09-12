@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const BASE_URL = "http://localhost:8000";
 
@@ -34,8 +34,16 @@ function CitiesProvider({ children }){
             value={{cities,isLoading}}>
             {children}
             </CitiesContext.Provider>
+            
 
 }
 
+function useCity(){
+   const context = useContext(CitiesContext)
+    if(context === undefined) throw new Error("Context has been called in the wrong component")
+        return context
+   
+}
 
-export  { CitiesProvider };
+
+export  { CitiesProvider, useCity };
