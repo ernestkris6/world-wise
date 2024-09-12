@@ -2,12 +2,12 @@ import Spinner from "../Components/Spinner";
 import Message from "../Components/Message";
 import CityItem from "./CityItem";
 import styles from './CityList.module.css'
-import { useCity } from "../Contexts/CitiesContext";
+import { useCities } from "../Contexts/CitiesContext";
 
 
 export default function CityList() {
 
-    const {cities, isLoading} = useCity();
+    const {cities, isLoading} = useCities();
  
     if(isLoading) return <Spinner />;
 

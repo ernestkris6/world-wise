@@ -38,12 +38,12 @@ function CitiesProvider({ children }){
 
 }
 
-function useCity(){
+function useCities(){
    const context = useContext(CitiesContext)
-    if(context === undefined) throw new Error("Context has been called in the wrong component")
+    if(context === undefined) throw new Error("Context has been called outside the Cities Provider")
         return context
    
 }
 
 
-export  { CitiesProvider, useCity };
+export  { CitiesProvider, useCities };
