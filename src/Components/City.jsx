@@ -3,6 +3,7 @@ import styles from './City.module.css'
 import { useCities } from "../Contexts/CitiesContext";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
+import Spinner from "./Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -16,7 +17,7 @@ const formatDate = (date) =>
 
     const {id} = useParams();
 
-    const { getCity, currentCity } = useCities();
+    const { getCity, currentCity, isLoading } = useCities();
  
     useEffect(
       function(){
@@ -29,7 +30,7 @@ const formatDate = (date) =>
 
   const navigate = useNavigate();
 
-
+  if(isLoading) return <Spinner />;
 
   return (
     <>
