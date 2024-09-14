@@ -1,5 +1,7 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./City.module.css";
+import { useCities } from "../Contexts/CitiesContext";
+import { useEffect } from "react";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -12,6 +14,12 @@ const formatDate = (date) =>
  function City() {
 
     const {id} = useParams();
+
+    const {currentCity, getCity} = useCities();
+
+    useEffect(function(){
+      getCity(id)
+    }, [id])
 
     //  const [searchParams, setSearchParams] = useSearchParams()
    
@@ -29,51 +37,51 @@ const formatDate = (date) =>
 //     notes: "My favorite city so far!",
 //   };
 
-//   const { cityName, emoji, date, notes } = currentCity;
+  const { cityName, emoji, date, notes } = currentCity;
 
-return<> 
-        <h1>City {id}</h1>
-        <h3>Latitude: {lat}</h3>
-        <h3>Longitude: {lng}</h3>
-      </>
+// return<> 
+//         <h1>City {id}</h1>
+//         <h3>Latitude: {lat}</h3>
+//         <h3>Longitude: {lng}</h3>
+//       </>
 
-//   return (
-//     <div className={styles.city}>
-//       <div className={styles.row}>
-//         <h6>City name</h6>
-//         <h3>
-//           <span>{emoji}</span> {cityName}
-//         </h3>
-//       </div>
+  return (
+    <div className={styles.city}>
+      <div className={styles.row}>
+        <h6>City name</h6>
+        <h3>
+          <span>{emoji}</span> {cityName}
+        </h3>
+      </div>
 
-//       <div className={styles.row}>
-//         <h6>You went to {cityName} on</h6>
-//         <p>{formatDate(date || null)}</p>
-//       </div>
+      <div className={styles.row}>
+        <h6>You went to {cityName} on</h6>
+        <p>{formatDate(date || null)}</p>
+      </div>
 
-//       {notes && (
-//         <div className={styles.row}>
-//           <h6>Your notes</h6>
-//           <p>{notes}</p>
-//         </div>
-//       )}
+      {notes && (
+        <div className={styles.row}>
+          <h6>Your notes</h6>
+          <p>{notes}</p>
+        </div>
+      )}
 
-//       <div className={styles.row}>
-//         <h6>Learn more</h6>
-//         <a
-//           href={`https://en.wikipedia.org/wiki/${cityName}`}
-//           target="_blank"
-//           rel="noreferrer"
-//         >
-//           Check out {cityName} on Wikipedia &rarr;
-//         </a>
-//       </div>
+      <div className={styles.row}>
+        <h6>Learn more</h6>
+        <a
+          href={`https://en.wikipedia.org/wiki/${cityName}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Check out {cityName} on Wikipedia &rarr;
+        </a>
+      </div>
 
-//       <div>
-//         <ButtonBack />
-//       </div>
-//     </div>
-//   );
+      <div>
+        <ButtonBack />
+      </div>
+    </div>
+  );
 }
 
 export default City;
