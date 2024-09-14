@@ -34,20 +34,23 @@ function CitiesProvider({ children }){
            fetchCities();
     }, []);
 
-    async function getCities(id){
+    async function getCity(id){
         try{
-            setIsLoading(true)
+            setIsLoading(true);
             const res = await fetch(`${BASE_URL}/cities/${id}`)
-            const data = await res.json()
+            const data = await res.json();
             setCurrentCity(data)
         }
         catch{
-            throw new Error("Failed to fetch data")
+            alert("There was an error loading the data")
         }
         finally{
             setIsLoading(false)
         }
+        
     }
+        
+    
    
 
     return <CitiesContext.Provider 
@@ -55,7 +58,7 @@ function CitiesProvider({ children }){
                 cities,
                 isLoading,
                 currentCity,
-                getCities,
+                getCity,
                 }}>
             {children}
             </CitiesContext.Provider>
