@@ -67,7 +67,7 @@ const formatDate = (date) =>
 
       <div>
         <Button type="back" onClick={()=> navigate(-1)}>
-          BACK
+            &larr; BACK
         </Button>
       </div>
     </div>
