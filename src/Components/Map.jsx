@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { useCities } from '../Contexts/CitiesContext'
 
 
 export default function Map() {
 
+  const {cities} = useCities();
 
-  const [mapPosition] = useState([51.05, -0.09])
+  const [mapPosition, setMapPosition] = useState([51.05, -0.09])
 
 
   return (
@@ -18,7 +20,7 @@ export default function Map() {
       />
         <Marker position={mapPosition}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          <span>{cities.notes}</span> <br /> Easily customizable.
         </Popup>
         </Marker>
     </MapContainer>
