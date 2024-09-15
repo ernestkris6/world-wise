@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
@@ -5,17 +6,17 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 export default function Map() {
 
 
-  const position = [51.05, -0.09]
+  const [mapPosition] = useState([51.05, -0.09])
 
 
   return (
     <div className={styles.mapContainer}>
-      <MapContainer className={styles.map} center={position} zoom={13} scrollWheelZoom={true}>
+      <MapContainer className={styles.map} center={mapPosition} zoom={13} scrollWheelZoom={true}>
         <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
-        <Marker position={position}>
+        <Marker position={mapPosition}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
