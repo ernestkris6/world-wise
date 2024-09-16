@@ -6,7 +6,7 @@ import { useCities } from '../Contexts/CitiesContext'
 
 export default function Map() {
 
-  const {cities} = useCities();
+  const { cities } = useCities();
 
   const [mapPosition, setMapPosition] = useState([51.05, -0.09])
 
@@ -18,11 +18,11 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
-        <Marker position={mapPosition}>
+        {<Marker position={mapPosition}>
         <Popup>
           <span>{cities.notes}</span> <br /> Easily customizable.
         </Popup>
-        </Marker>
+        </Marker>}
     </MapContainer>
         
     </div>
