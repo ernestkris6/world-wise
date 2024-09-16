@@ -18,11 +18,14 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
-        {<Marker position={mapPosition}>
+        {cities.map((city)=>(
+          <Marker 
+            position={[city.position.lat, city.position.lng]} key={city.id}
+          >
         <Popup>
-          <span>{cities.notes}</span> <br /> Easily customizable.
+          <span>{city.emoji}</span> <span>{city.cityName}</span>
         </Popup>
-        </Marker>}
+        </Marker>))}
     </MapContainer>
         
     </div>
