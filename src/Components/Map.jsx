@@ -22,7 +22,7 @@ const mapLng = searchParams.get("lng")
     <div className={styles.mapContainer}>
       <MapContainer 
       className={styles.map} 
-      center={[mapLat, mapLng]} 
+      center={[mapPosition]} 
       zoom={13} 
       scrollWheelZoom={true}>
         <TileLayer
