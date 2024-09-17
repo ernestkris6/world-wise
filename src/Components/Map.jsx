@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useCities } from '../Contexts/CitiesContext'
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 
 
 export default function Map() {
@@ -11,10 +11,10 @@ export default function Map() {
 
   const [mapPosition, setMapPosition] = useState([51.05, -0.09])
   
-const [searchParams, setSearchParams]  = useSearchParams();
+// const [searchParams, setSearchParams]  = useSearchParams();
 
-const mapLat = searchParams.get("lat");
-const mapLng = searchParams.get("lng")
+// const mapLat = searchParams.get("lat");
+// const mapLng = searchParams.get("lng");
  
   
 
@@ -22,7 +22,7 @@ const mapLng = searchParams.get("lng")
     <div className={styles.mapContainer}>
       <MapContainer 
       className={styles.map} 
-      center={[mapPosition]} 
+      center={mapPosition} 
       zoom={13} 
       scrollWheelZoom={true}>
         <TileLayer
