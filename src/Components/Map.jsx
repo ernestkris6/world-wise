@@ -44,6 +44,12 @@ export default function Map() {
 }
 
 
+function MapNav(){
+  return(
+    <div></div>
+  )
+}
+
 
 
 
