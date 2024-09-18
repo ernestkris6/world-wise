@@ -38,6 +38,8 @@ export default function Map() {
         </Popup>
         </Marker>))}
     </MapContainer>
+
+    <MapNav />
         
     </div>
   )
@@ -49,6 +51,8 @@ function MapNav(){
     <div></div>
   )
 }
+
+
 
 
 
