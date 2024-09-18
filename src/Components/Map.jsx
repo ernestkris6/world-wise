@@ -40,6 +40,7 @@ export default function Map() {
     </MapContainer>
 
     <MapNav />
+    <Markers />
         
     </div>
   )
@@ -52,7 +53,11 @@ function MapNav(){
   )
 }
 
-
+function Markers(){
+  return(
+    <div></div>
+  )
+}
 
 
 
