@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import styles from './Map.module.css'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useCities } from '../Contexts/CitiesContext'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-// import { useSearchParams } from 'react-router-dom';
+import styles from './Map.module.css'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { useCities } from '../Contexts/CitiesContext'
+
 
 
 export default function Map() {
@@ -23,8 +23,6 @@ export default function Map() {
 
   return (
     <div className={styles.mapContainer}>
-       {/* <h3>Latitude: {mapLat}</h3>
-       <h3>Longitude: {mapLng}</h3> */}
       <MapContainer 
       className={styles.map} 
       // center={mapPosition} 
@@ -45,7 +43,7 @@ export default function Map() {
         </Marker>))}
     </MapContainer>
 
-    <MapNav />
+    <ChangeCenter position={[mapLat, mapLng]} />
     <Markers />
         
     </div>
@@ -53,10 +51,11 @@ export default function Map() {
 }
 
 
-function MapNav(){
-  return(
-    <div></div>
-  )
+function ChangeCenter({position}){
+
+  const map = useMap()
+  map.setView(position)
+  return null;
 }
 
 function Markers(){
