@@ -25,8 +25,8 @@ export default function Map() {
       
     <MapContainer 
       className={styles.map} 
-      // center={mapPosition} 
-      center={[mapLat || 40, mapLng || 0]}
+      center={mapPosition} 
+      // center={[mapLat, mapLng]}
       zoom={6} 
       scrollWheelZoom={true}>
         <TileLayer
@@ -41,28 +41,31 @@ export default function Map() {
           <span>{city.emoji}</span> <span>{city.cityName}</span>
         </Popup>
         </Marker>))}
+
+    <ChangeCenter position={[mapLat || 40, mapLng || 0]} />
+    <Markers /> 
+
     </MapContainer>
 
-    {/* <ChangeCenter position={[mapLat || 40, mapLng || 0]} /> */}
-    {/* <Markers />  */}
+    
         
     </div> 
   )
 }
 
 
-// function ChangeCenter({position}){
+function ChangeCenter({position}){
 
-//   const map = useMap()
-//   map.setView(position)
-//   return null;
-// }
+  const map = useMap()
+  map.setView(position)
+  return null;
+}
 
-// function Markers(){
-//   return(
-//     <div></div>
-//   )
-// }
+function Markers(){
+  return(
+    <div></div>
+  )
+}
 
 
 
