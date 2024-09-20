@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import styles from './Map.module.css'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet'
 import { useCities } from '../Contexts/CitiesContext'
 
 
 
 export default function Map() {
 
-  const navigate = useNavigate();
-
   const { cities } = useCities();
 
   const [mapPosition, setMapPosition] = useState([40, 0])
   
-  const [searchParams, setSearchParams]  = useSearchParams();
+  const [searchParams]  = useSearchParams();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
 
+  //N.B: useEffect is a sycn mechanism. 
+  //It helped us to recall the lat and lng after the initial component dies.
 
   useEffect(function() {
      if(mapLat && mapLng) setMapPosition([mapLat, mapLng])
@@ -47,7 +47,7 @@ export default function Map() {
         </Marker>))}
 
     <ChangeCenter position={mapPosition} />
-    <Markers /> 
+    <DetectClick /> 
 
     </MapContainer>
 
@@ -65,12 +65,18 @@ function ChangeCenter({position}){
   return null;
 }
 
-function Markers(){
-  return(
-    <div></div>
-  )
-}
+function DetectClick(){
 
+  const navigate = useNavigate();
+
+  useMapEvents({
+    click: (e) => {
+      // console.log(e)
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+    }
+      
+  })
+}
 
 
 
