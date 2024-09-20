@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
@@ -19,6 +19,10 @@ export default function Map() {
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
 
+
+  useEffect(function() {
+     if(mapLat && mapLng) setMapPosition([mapLat, mapLng])
+  }, [mapLat, mapLng])
 
   return (
     <div className={styles.mapContainer}>
@@ -42,7 +46,7 @@ export default function Map() {
         </Popup>
         </Marker>))}
 
-    <ChangeCenter position={[mapLat || 40, mapLng || 0]} />
+    <ChangeCenter position={mapPosition} />
     <Markers /> 
 
     </MapContainer>
