@@ -12,21 +12,21 @@ export default function Map() {
 
   const { cities } = useCities();
 
-  const [mapPosition, setMapPosition] = useState([51.05, -0.09])
+  const [mapPosition, setMapPosition] = useState([40, 0])
   
   const [searchParams, setSearchParams]  = useSearchParams();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
- 
-  
+
 
   return (
     <div className={styles.mapContainer}>
-      <MapContainer 
+      
+    <MapContainer 
       className={styles.map} 
-      center={mapPosition} 
-      // center={[mapLat, mapLng]}
+      // center={mapPosition} 
+      center={[mapLat || 40, mapLng || 0]}
       zoom={6} 
       scrollWheelZoom={true}>
         <TileLayer
@@ -43,10 +43,10 @@ export default function Map() {
         </Marker>))}
     </MapContainer>
 
-    {/* <ChangeCenter position={[mapLat, mapLng]} />
-    <Markers /> */}
+    {/* <ChangeCenter position={[mapLat || 40, mapLng || 0]} /> */}
+    {/* <Markers />  */}
         
-    </div>
+    </div> 
   )
 }
 
