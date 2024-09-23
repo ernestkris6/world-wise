@@ -26,7 +26,7 @@ export default function Map() {
 
   return (
     <div className={styles.mapContainer}>
-      
+  
     <MapContainer 
       className={styles.map} 
       center={mapPosition} 
@@ -77,14 +77,6 @@ function DetectClick(){
       
   })
 }
-
-
-
-
-// import { useSearchParams, useNavigate } from 'react-router-dom'
-
-// const navigate = useNavigate()
-
 
 
 {/* <h1>Map</h1>
