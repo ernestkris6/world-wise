@@ -1,7 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const [location, setLocation] = useState("");
+const [isLoading, setIsLoading] = useState(false);
+const [position, setPosition] = useState({});
+const [error, setError] = useState(null);
 
-useEffect(function() {
-
-}, [])
+function getPosition(){
+    if(!navigator.geolocation) return (
+        setError("Your browser does not support geolocation")
+    )
+    setIsLoading(true);
+    navigator.geolocation.getCurrentPosition((pos)=> {
+        setPosition({
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude
+        });
+    })
+}
