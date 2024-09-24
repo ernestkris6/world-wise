@@ -79,6 +79,27 @@ function DetectClick(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {/* <h1>Map</h1>
         <h3>Latitude: {lat}</h3>
         <h3>Longitude: {lng}</h3>
