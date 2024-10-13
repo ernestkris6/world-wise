@@ -6,7 +6,6 @@ const CitiesContext = createContext()
 
 
 function CitiesProvider({ children }){
-
     
 
     const [cities, setCities] = useState([]);
@@ -49,17 +48,17 @@ function CitiesProvider({ children }){
         }
         
     }
-        
-    
-   
-
-    return <CitiesContext.Provider 
-            value={{
+        const value = {
                 cities,
                 isLoading,
                 currentCity,
                 getCity,
-                }}>
+        }
+    
+   
+
+    return <CitiesContext.Provider 
+            value={value}>
             {children}
             </CitiesContext.Provider>
             
