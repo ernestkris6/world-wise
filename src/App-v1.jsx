@@ -33,7 +33,7 @@ export default function App() {
         alert("There was an error loading the data...")
       }
       finally{
-        setIsLoading(false)
+        setIsLoading()
       }
       
     }
