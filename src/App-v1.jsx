@@ -19,8 +19,6 @@ export default function App() {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-
-
   useEffect(function(){
     async function fetchCities(){
       try{
