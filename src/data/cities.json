@@ -35,39 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
-    },
-    {
-      "id": "7253",
-      "cityName": "lag",
-      "country": "",
-      "emoji": "",
-      "notes": "nice place to be!",
-      "position": {
-        "lat": "40.245991504199026",
-        "lng": "-6.372070312500001"
-      }
-    },
-    {
-      "id": "41b7",
-      "cityName": "lag",
-      "country": "",
-      "emoji": "",
-      "notes": "nice place to be!",
-      "position": {
-        "lat": "40.245991504199026",
-        "lng": "-6.372070312500001"
-      }
-    },
-    {
-      "id": "8453",
-      "cityName": "ib",
-      "country": "",
-      "emoji": "",
-      "notes": "nice place to be!",
-      "position": {
-        "lat": "40.245991504199026",
-        "lng": "-6.372070312500001"
-      }
     }
   ]
 }
