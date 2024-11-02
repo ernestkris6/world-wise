@@ -15,7 +15,7 @@ function reducer(state, action){
     switch(action.type){
         case "cities/loading": {
             return{
-                ...state.isLoading
+               state: state.isLoading
             }  
 
         }
