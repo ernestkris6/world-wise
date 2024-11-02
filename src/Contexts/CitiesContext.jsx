@@ -13,10 +13,21 @@ const initialState = {
 
 function reducer(state, action){
     switch(action.type){
-        case "":
-            return {
-                
-            }
+        case "cities/loading": {
+            return{
+                ...state.isLoading
+            }  
+
+        }
+        
+        case "cities/completed": {
+            return{
+
+            } 
+            
+        }
+
+        default: throw new Error("")
     }
 }
 
