@@ -11,6 +11,7 @@ import City from "./Components/City"
 import Form from "./Components/Form"
 import { CitiesProvider } from "./Contexts/CitiesContext";
 import { AuthContextProvider} from './Contexts/FakeAuthContext';
+import ProtectectedRoutes from "./Pages/ProtectectedRoutes"
 
 
 export default function App() {
@@ -26,7 +27,12 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="product" element={<Product />}/>
           <Route path="pricing" element={<Pricing />}/>
-          <Route path="/app" element={<AppLayout/>} >
+          <Route 
+            path="/app" 
+            element={
+              <ProtectectedRoutes>
+                 <AppLayout/>
+              </ProtectectedRoutes>} >
             <Route 
             index 
             element={<Navigate replace to="cities" />} 
