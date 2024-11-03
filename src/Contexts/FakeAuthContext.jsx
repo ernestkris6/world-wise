@@ -55,7 +55,7 @@ function AuthContextProvider({children}){
         user, 
         isAuthenticated, 
         login, 
-        logout
+        logout,
     }}
     >
         {children}
