@@ -10,6 +10,7 @@ import CountryList from "./Components/CountryList"
 import City from "./Components/City"
 import Form from "./Components/Form"
 import { CitiesProvider } from "./Contexts/CitiesContext";
+import { AuthContextProvider} from './Contexts/FakeAuthContext';
 
 
 export default function App() {
@@ -18,7 +19,8 @@ export default function App() {
   return (
    
     <div>
-      <CitiesProvider>
+      <AuthContextProvider>
+       <CitiesProvider>
         <BrowserRouter>
         <Routes>
           <Route index element={<HomePage />} />
@@ -40,12 +42,13 @@ export default function App() {
             element={<CountryList />} />
             <Route path="form" element={<Form />} />
           </Route>
-        
+    
           <Route path="login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-  </CitiesProvider>
+    </CitiesProvider>
+   </AuthContextProvider>
     </div>
     
     
