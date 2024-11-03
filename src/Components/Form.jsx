@@ -25,6 +25,7 @@ function Form() {
 
   const {lat, lng} = useUrlPosition();
   const {createCity, isLoading} = useCities();
+  const navigate = useNavigate();
   
   
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false)
@@ -38,7 +39,6 @@ function Form() {
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client"
 
 
-  const navigate = useNavigate();
 
   useEffect(function(){
 
@@ -66,33 +66,35 @@ function Form() {
       }
       
     }
-
     fetchCityData();
-  }, [lat, lng]);
+
+  }, [lat, lng]
+);
 
 
   async function handleSubmit(e){
     e.preventDefault();
 
-    if(!cityName || !date ) return
+    if(!cityName || !date ) return;
 
     const newCity = {
       cityName, 
       country, 
       emoji, 
+      date,
       notes, 
       position: {lat, lng},
   
-    }
+    };
 
     await createCity(newCity)
-    navigate('/app/cities')
+    navigate('/app/cities');
     
   }
 
   if(isLoadingGeocoding) return <Spinner />;
 
-  if(!lat && lng) return <Message message='Start by clicking somewhere on the map' />
+  if(!lat && !lng) return <Message message='Start by clicking somewhere on the map' />
 
   if(geocodingError) return <Message message={geocodingError} />;
 
@@ -117,7 +119,12 @@ function Form() {
           onChange={(e) => setDate(e.target.value)}
           value={date}
         /> */}
-        <DatePicker id="date" selected={date} onChange={date => setDate(date)} dateFormat='dd/MM/yyyy'/>
+        <DatePicker 
+        id="date" 
+        onChange={(date) => setDate(date)} 
+        selected={date} 
+        dateFormat='dd/MM/yyyy'
+        />
       </div>
 
       <div className={styles.row}>
@@ -132,10 +139,7 @@ function Form() {
       <div className={styles.buttons}>
         <Button type="primary">ADD +</Button>
         <Button 
-          type="back" 
-          onClick={(e) => {
-          e.preventDefault();
-          navigate(-1)}}
+          type='back'
           >
             &larr; BACK
         </Button>
@@ -145,3 +149,9 @@ function Form() {
 }
 
 export default Form;
+
+
+// type="back" 
+//           onClick={(e) => {
+//           e.preventDefault();
+//           navigate(-1)}}

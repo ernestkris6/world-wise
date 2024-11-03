@@ -22,7 +22,7 @@ const formatDate = (date) =>
     useEffect(
       function(){
         getCity(id);
-    }, [id]);
+    }, [id, getCity]);
 
     
 

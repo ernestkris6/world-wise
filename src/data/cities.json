@@ -25,16 +25,15 @@
       "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "d817",
+      "cityName": "Itesiwaju",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
+        "lat": "8.124491290861204",
+        "lng": "3.6254882812500004"
+      }
     }
   ]
 }
