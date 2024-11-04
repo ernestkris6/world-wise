@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import PageNav from "../Components/PageNav";
 import styles from "./Homepage.module.css";
-import Pricing from "./Pricing";
+
 
 export default function Homepage() {
   return (

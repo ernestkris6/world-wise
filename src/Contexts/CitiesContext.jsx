@@ -1,4 +1,9 @@
-import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import { 
+    createContext, 
+    useContext, 
+    useEffect, 
+    useReducer, 
+    } from 'react';
 
 const BASE_URL = "http://localhost:8000";
 
@@ -52,8 +57,7 @@ function reducer(state, action){
                 ...state, 
                 isLoading: false, 
                 cities: state.cities.filter((city)=> city.id !== action.payload),
-                currentCity: {}
-
+                currentCity: {},
             };
 
         case 'rejected':
@@ -76,28 +80,24 @@ function CitiesProvider({ children }){
     
     const [{cities, isLoading, currentCity, error}, dispatch] = useReducer(reducer, initialState)
         
-    // const [cities, setCities] = useState([]);
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [currentCity, setCurrentCity] = useState({});
+   
 
     useEffect(function(){
         async function fetchCities(){
             dispatch({type :'loading'})
 
             try{
-                // setIsLoading(true);
+               
                 const res = await fetch(`${BASE_URL}/cities`)
                 const data = await res.json();
-                // setCities(data)
+              
                 dispatch({type: 'cities/loaded', payload: data })
             }
             catch{
-                // alert("There was an error loading the data")
+               
                 dispatch({type: "rejected", payload: 'There was an error loading the data'})
             }
-            // finally{
-            //     setIsLoading(false)
-            // }
+            
             
         }
 
@@ -110,18 +110,16 @@ function CitiesProvider({ children }){
         dispatch({type: 'loading'})
 
         try{
-            // setIsLoading(true);
+          //excessive fetch is on here...
             const res = await fetch(`${BASE_URL}/cities/${id}`)
             const data = await res.json();
             dispatch({type: 'city/loaded', payload: data})
-            // setCurrentCity(data);
+         
         }
         catch{
             dispatch({type: "rejected", payload: 'There was an error loading the city...'})
         }
-        // finally{
-        //     setIsLoading(false)
-        // }
+        
         
     }
 
@@ -130,7 +128,7 @@ function CitiesProvider({ children }){
         dispatch({type: 'loading'})
 
         try{
-            // setIsLoading(true);
+           
             const res = await fetch(`${BASE_URL}/cities`, {
                 method: 'POST',
                 body: JSON.stringify(newCity),
@@ -139,41 +137,33 @@ function CitiesProvider({ children }){
                 },
             })
             const data = await res.json();
-            // console.log(data);
+           
             dispatch({type: 'city/created', payload: data})
-            // setCities(cities => [...cities, data]);
+            
         }
         catch{
             dispatch({type: "rejected", payload: "There was an error creating the city..."})
-            // alert("There was an error creating the city.")
+           
         }
-        // finally{
-        //     setIsLoading(false)
-        // }
-        
+       
     }
 
     async function deleteCity(id){
 
         dispatch({type: "loading"})
         try{
-            // setIsLoading(true);
+           
                 await fetch(`${BASE_URL}/cities/${id}`, {
                 method: "DELETE",
             })
 
             dispatch({type: "city/deleted", payload: id})
-                      
-            // setCities((cities)=> cities.filter(city => city.id !== id));
+        
         }
         catch{
             dispatch({type: "rejected", payload: "There was an error deleting the city"})
-            // alert("There was an error deleting the city.")
+            
         }
-        // finally{
-        //     setIsLoading(false)
-        // }
-        
     }
 
 
