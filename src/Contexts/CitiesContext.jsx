@@ -1,5 +1,6 @@
 import { 
     createContext, 
+    useCallback, 
     useContext, 
     useEffect, 
     useReducer, 
@@ -105,7 +106,7 @@ function CitiesProvider({ children }){
     }, []);
 
     
-    async function getCity(id){
+    const getCity = useCallback(async function getCity(id){
         if (Number(id) === currentCity.id) return;
         dispatch({type: 'loading'})
 
@@ -121,7 +122,7 @@ function CitiesProvider({ children }){
         }
         
         
-    }
+    })
 
     async function createCity(newCity){
 
