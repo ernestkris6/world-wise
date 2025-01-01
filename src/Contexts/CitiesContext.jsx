@@ -122,7 +122,7 @@ function CitiesProvider({ children }){
         }
         
         
-    })
+    }, [currentCity.id])
 
     async function createCity(newCity){
 
